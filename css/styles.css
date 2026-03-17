@@ -64,23 +64,26 @@ picture {
     --White: hsl(0, 0%, 100%);
 
     /* spacing */
+    --space-50: 0.25rem; /* 4px */
     --space-100: 0.5rem; /* 8px */
-    --space-150: 0.75rem; /* 12px */
     --space-200: 1rem; /* 16px */
     --space-300: 1.5rem; /* 24px */
     --space-400: 2rem; /* 32px */
     --space-500: 2.5rem; /* 40px */
     --space-600: 3rem; /* 48px */
-    --space-1600: 8rem; /* 128px */
+    --space-700: 3.5rem; /* 56px */
+    --space-800: 4rem; /* 64px */
+    --space-900: 4.5rem; /* 72px */
+    --space-1000: 5rem; /* 80px */
+    --space-1400: 7rem; /* 112px */
 
 
     /* font families */
-    --main: "Outfit", sans-serif;
-    --headline: "Young Serif", serif;
+    --main: "Red Hat Display", sans-serif;
 
     /* type scale */
     --base-size: 1rem; /* 16px */
-    --scale: 1.333;
+    --scale: 1.6; /* perfect fourth */
 
     /* Start from base size for smallest heading */
     --h6: var(--base-size); 
@@ -115,7 +118,7 @@ picture {
   h4,
   h5,
   h6 {
-    font-family: var(--headline);
+    font-family: var(--main);
   }
   h1 {
     font-size: var(--h1);

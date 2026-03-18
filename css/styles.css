@@ -61,7 +61,14 @@ picture {
 @layer base {
   :root {
     /* colors */
-    --White: hsl(0, 0%, 100%);
+    --white: hsl(0, 0%, 98%);
+    --slate-300: hsl(240, 18%, 85%);
+    --slate-600: hsl(240, 10%, 57%);
+    --slate-900: hsl(240, 21%, 20%);
+    --purple-300: hsl(268, 100%, 86%);
+    --purple-600: hsl(268, 34%, 53%);
+    --cyan-300: hsl(192, 90%, 77%);
+    --cyan-600: hsl(192, 37%, 48%);
 
     /* spacing */
     --space-50: 0.25rem; /* 4px */
@@ -94,17 +101,11 @@ picture {
     --h1: calc(var(--h2) * var(--scale));
 
     --small: calc(var(--base-size) / var(--scale)); /* smaller than base */
+    --large: calc(var(--base-size) * 1.125); /* larger than base - 18px */
   }
+}
 
-  /* border box model: https://css-tricks.com/box-sizing/ */
-  html {
-    box-sizing: border-box;
-  }
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
+@layer elements {
 
   body {
     font-family: var(--main);
@@ -167,18 +168,22 @@ picture {
   }
 }
 
+@layer objects {
+  .container {
+    width: min(90%, 1100px);
+    margin-inline: auto;
+  }
+
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-400);
+  }
+}
+
 @layer components {
-    footer.attribution {
-        padding: 2rem 0;
-        background-color: var(--Stone100);
-    }
-    .attribution p {
-       font-size: var(--small); text-align: center;
-      }
-    .attribution a:hover, .attribution a:focus, .attribution a:active {
-      color: var(--Green);
-    }
-  } 
+   
+} 
 
 @layer media-queries {
 

@@ -179,9 +179,6 @@ picture {
     flex-direction: column;
     gap: var(--space-400);
   }
-}
-
-@layer components {
 
   .button {
     display: inline-block;
@@ -190,9 +187,30 @@ picture {
     color: var(--white);
     text-decoration: none;
     border-radius: 9999px;
-    font-weight: 500;
+    font-weight: 900;
+    letter-spacing: 1px;
     transition: background-color 0.3s ease;
+    width:fit-content;
+
+    &.cyan {
+      background-color: var(--cyan-600);
+    }
   }
+
+  .button:hover,
+  .button:focus {
+      background-color: var(--purple-300);
+  }
+
+  .button.cyan:hover,
+  .button.cyan:focus {
+      background-color: var(--cyan-300);
+  }
+}
+
+@layer components {
+
+
 
   header {
     min-height: 4.75rem;
@@ -209,6 +227,7 @@ picture {
     padding-block-end: var(--space-800);
 
     & div.container {
+      display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
@@ -217,8 +236,9 @@ picture {
       & div {
         display: flex;
         flex-direction: column;
-        gap: var(--space-200);
+        align-items: center;
         justify-content: center;
+        gap: var(--space-200);
       }
     }
   }
@@ -231,6 +251,7 @@ picture {
     padding-block-end: var(--space-800);
 
     & div.container {
+      display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
@@ -246,12 +267,43 @@ picture {
     padding-block-end: var(--space-800);
 
     & div.container {
+      display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
       gap: var(--space-300);
     }
   }
+
+  .number-01, .number-02 {
+    border: 1px solid var(--slate-300);
+    border-radius: 50%;
+    width: 3.5rem;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .number-01::before, .number-02::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: var(--space-1000);
+    background: var(--slate-300);
+    position: absolute;
+    bottom: 100%;
+  }
+
+  .image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: var(--space-200);
+  }
+
+
 } 
 
 @layer media-queries {

@@ -243,6 +243,12 @@ picture {
     }
   }
 
+  main section:first-child img {
+  width: 110%;
+  margin-inline: -5%;
+  max-width: none;
+  }
+
   main section:nth-child(2) {
     display: flex;
     flex-direction: column;
@@ -265,6 +271,10 @@ picture {
     gap: var(--space-400);
     padding-block-start: var(--space-800);
     padding-block-end: var(--space-800);
+    background-color: var(--cyan-600);
+    position: relative;
+    color: var(--white);
+    margin-block-start: 7.5rem; /* Adjust this value to control the overlap */
 
     & div.container {
       display: flex;
@@ -272,10 +282,33 @@ picture {
       align-items: center;
       text-align: center;
       gap: var(--space-300);
+      position: relative; /* Brings content to the front */
+      z-index: 2;
     }
   }
 
-  .number-01, .number-02 {
+  main section:nth-child(3)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/mobile/image-footer.jpg');
+    background-size: cover; /* Optional: makes the image cover the entire area */
+    filter: grayscale(100%); /* Applies full grayscale effect */
+    z-index: 1; /* Puts the background behind the content */
+}
+
+  main section:nth-child(3)::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgb(77 150 169 / 0.8);
+    z-index: 1;
+  }
+
+  .number-01 {
     border: 1px solid var(--slate-300);
     border-radius: 50%;
     width: 3.5rem;
@@ -285,6 +318,23 @@ picture {
     justify-content: center;
     position: relative;
   }
+
+  main section:nth-child(3) .number-02 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+  color: var(--slate-600);
+  border: 1px solid var(--slate-300);
+  border-radius: 50%;
+  width: 3.5rem;
+  aspect-ratio: 1 / 1;
+  } 
 
   .number-01::before, .number-02::before {
     content: "";
@@ -301,6 +351,10 @@ picture {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: var(--space-200);
+
+    & img {
+      border-radius: .5rem;
+    }
   }
 
 

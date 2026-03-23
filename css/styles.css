@@ -371,6 +371,35 @@ picture {
 
   @media (min-width: 48rem) {     /* 768px and above -- tablet */
    
+  .button {
+    display: inline;
+    }
+
+    main section:first-child {
+
+      & div.container {
+
+        & div {
+          flex-direction: row;
+        }
+      }
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-template-rows: 1fr;
+      gap: var(--space-200);
+
+      & img {
+        border-radius: .5rem;
+      }
+    }
+
+    main section:nth-child(3)::before {
+      background-image: url('../assets/tablet/image-footer.jpg');
+  }
+
   } 
 
   @media (min-width: 90rem) {     /* 1440px and above -- desktop */

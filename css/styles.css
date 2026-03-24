@@ -101,19 +101,19 @@ picture {
 
   .type-preset-1 {
     font-weight: 900;
-    font-size: 64px;
+    font-size: 2.5rem;
     line-height: 110%;
   }
 
   .type-preset-2 {
     font-weight: 900;
-    font-size: 40px;
+    font-size: 2rem;
     line-height: 110%;
   }
 
   .type-preset-3 {
     font-weight: 900;
-    font-size: 16px;
+    font-size: .75rem;
     line-height: 110%;
     letter-spacing: 4px;
     text-transform: uppercase;
@@ -122,13 +122,13 @@ picture {
 
   .type-preset-4 {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 150%;
   }
 
   .type-preset-5 {
     font-weight: 900;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 150%;
   }
 
@@ -153,16 +153,6 @@ picture {
 }
 
 @layer objects {
-  .container {
-    width: min(90%, 1100px);
-    margin-inline: auto;
-  }
-
-  .stack {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-400);
-  }
 
   .button {
     display: inline-block;
@@ -204,16 +194,18 @@ picture {
   main section:first-child {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: var(--space-600);
     padding-block-start: var(--space-800);
     padding-block-end: var(--space-800);
 
-    & div.container {
+    & .container {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
       gap: var(--space-300);
+      max-width: 20rem;
       /* padding-inline-start: var(--space-400);
       padding-inline-end: var(--space-400); */
 
@@ -236,11 +228,13 @@ picture {
   main section:nth-child(2) {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: var(--space-400);
     padding-block-start: var(--space-1000);
     padding-block-end: var(--space-800);
+    padding-inline: 2rem;
 
-    & div.container {
+    & .container {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -268,6 +262,7 @@ picture {
   main section:nth-child(3) {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: var(--space-400);
     padding-block-start: var(--space-800);
     padding-block-end: var(--space-800);
@@ -290,6 +285,7 @@ picture {
 
     & p {
       color: var(--white);
+      text-wrap:pretty;
     }
   }
 
@@ -371,19 +367,49 @@ picture {
 
   @media (min-width: 48rem) {     /* 768px and above -- tablet */
    
-  .button {
+  .type-preset-1 {
+    font-size: 3rem;
+  }
+
+  .type-preset-2 {
+    font-size: 2.25rem;
+  }
+
+    .type-preset-3 {
+    font-size: .875rem;
+  }
+  
+    .button {
     display: inline;
     }
 
     main section:first-child {
 
       & div.container {
+        max-width: 28rem;
 
         & div {
           flex-direction: row;
         }
       }
     }
+
+    main section:nth-child(2) {
+
+        & .container {
+        }
+
+        & .content {
+          max-width: 31.5rem;
+        }
+      }
+
+    main section:nth-child(3) {
+
+        & div.container {
+          max-width: 31.5rem;
+        }
+      }
 
     .image-grid {
       display: grid;
@@ -403,6 +429,46 @@ picture {
   } 
 
   @media (min-width: 90rem) {     /* 1440px and above -- desktop */
+
+  .type-preset-1 {
+    font-size: 4rem;
+  }
+
+  .type-preset-2 {
+    font-size: 2.5rem;
+  }
+
+    .type-preset-3 {
+    font-size: 1rem;
+  }
+
+      main section:first-child {
+
+      & div.container {
+        max-width: 28rem;
+
+
+      }
+    }
+
+    main section:nth-child(2) {
+
+        & .container {
+        }
+
+        & .content {
+          max-width: 34rem;
+        }
+      }
+
+    main section:nth-child(3) {
+      padding-block: var(--space-1400);
+
+        & div.container {
+          flex-direction: row;
+          max-width: 70rem;
+        }
+      }
 
   } 
 

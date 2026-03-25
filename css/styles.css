@@ -84,7 +84,6 @@ picture {
     --space-1000: 5rem; /* 80px */
     --space-1400: 7rem; /* 112px */
 
-
     /* font families */
     --main: "Red Hat Display", sans-serif;
 
@@ -442,33 +441,56 @@ picture {
     font-size: 1rem;
   }
 
-      main section:first-child {
+  main section:first-child {
 
-      & div.container {
-        max-width: 28rem;
+  & div.container {
+    max-width: 28rem;
+  }
+}
 
+  main section:nth-child(2) {
 
+      & .container {
+      }
+
+      & .content {
+        max-width: 34rem;
       }
     }
-
-    main section:nth-child(2) {
-
-        & .container {
-        }
-
-        & .content {
-          max-width: 34rem;
-        }
-      }
 
     main section:nth-child(3) {
       padding-block: var(--space-1400);
 
         & div.container {
-          flex-direction: row;
-          max-width: 70rem;
+            flex-direction: row;
+            max-width: 70rem;
+            justify-content: space-between;
+            width: 100%;
+
+           & :nth-child(1) {
+            text-align: left;
+            max-width: 18.75rem;
+            align-self: flex-start;
+          }
+
+          & :nth-child(2) {
+            max-width: 35ch;
+            text-align: left;
+            justify-content: flex-start;
+            align-self: flex-start;
+          }
+
+          & :nth-child(3) {
+            flex: 0 0 auto;
+            width:fit-content;
+            align-self: flex-start;
+          }
         }
       }
+
+    main section:nth-child(3)::before {
+      background-image: url('../assets/desktop/image-footer.jpg');
+  }
 
   } 
 

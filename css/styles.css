@@ -305,7 +305,7 @@ picture {
     content: "";
     position: absolute;
     inset: 0;
-    background-color: rgb(77 150 169 / 0.8);
+    background-color: rgb(77 150 169 / 0.9);
     z-index: 1;
   }
 
@@ -445,6 +445,7 @@ picture {
 
   & div.container {
     max-width: 28rem;
+    gap:var(--space-400);
   }
 }
 
@@ -474,7 +475,7 @@ picture {
           }
 
           & :nth-child(2) {
-            max-width: 35ch;
+            max-width: 30ch;
             text-align: left;
             justify-content: flex-start;
             align-self: flex-start;
@@ -490,6 +491,42 @@ picture {
 
     main section:nth-child(3)::before {
       background-image: url('../assets/desktop/image-footer.jpg');
+  }
+
+    main section:first-child > img {
+    display: none;
+  }
+
+  main section:first-child {
+    position: relative;
+    overflow: visible;
+  }
+
+  main section:first-child::before {
+    content: "";
+    position: absolute;
+    left: -1.5rem;
+    top: 45%;
+    transform: translateY(-50%);
+    width: 394px;  /* match the image's natural width */
+    height: 303px;
+    background-image: url('../assets/desktop/image-hero-left.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  main section:first-child::after {
+    content: "";
+    position: absolute;
+    right: -1.5rem;
+    top: 58%;
+    transform: translateY(-50%);
+    width: 394px;
+    height: 303px;
+    background-image: url('../assets/desktop/image-hero-right.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
   }
 
   } 

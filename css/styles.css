@@ -69,6 +69,7 @@ picture {
     --purple-600: hsl(268, 34%, 53%);
     --cyan-300: hsl(192, 90%, 77%);
     --cyan-600: hsl(192, 37%, 48%);
+    --cyan-other: #4D96A9;
 
     /* spacing */
     --space-50: 0.25rem; /* 4px */
@@ -114,9 +115,9 @@ picture {
     font-weight: 900;
     font-size: .75rem;
     line-height: 110%;
-    letter-spacing: 4px;
+    letter-spacing: var(--space-50);
     text-transform: uppercase;
-    color: #4D96A9;
+    color: var(--cyan-other);
   }
 
   .type-preset-4 {
@@ -161,7 +162,7 @@ picture {
     text-decoration: none;
     border-radius: 9999px;
     font-weight: 900;
-    letter-spacing: 1px;
+    letter-spacing: .063rem;
     transition: background-color 0.3s ease;
     width:fit-content;
 
@@ -544,8 +545,8 @@ picture {
     left: -1.5rem;
     top: 45%;
     transform: translateY(-50%);
-    width: 394px;  /* match the image's natural width */
-    height: 303px;
+    width: 24.625rem;  
+    height: 18.938rem;
     background-image: url('../assets/desktop/image-hero-left.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -558,8 +559,8 @@ picture {
     right: -1.5rem;
     top: 58%;
     transform: translateY(-50%);
-    width: 394px;
-    height: 303px;
+    width: 24.625rem;  
+    height: 18.938rem;
     background-image: url('../assets/desktop/image-hero-right.png');
     background-size: contain;
     background-repeat: no-repeat;
